@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from joinboard.views import index, allTask, logout_view, login_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasks/', index),
+    path('', index),
+    path('task/', allTask),
+    path('logout/', logout_view),
+    path('login/', login_view),
+    path('register/', register_view),
 ]

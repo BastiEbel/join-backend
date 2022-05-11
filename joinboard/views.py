@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponseRedirect
 from django.core import serializers
-from django.http import JsonResponse
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
@@ -12,10 +12,18 @@ from joinboard.models import Task
 # Create your views here.
 def index(request):
     if request.method == 'POST':
-        new_tasks = Task.objects.create(text=request.POST['textvalue'], created_at=request.POST['dateValue'], user=request.user.username, description=request.POST['description'], category=request.POST['category'])
-        serialized_obj = serializers.serialize('json', [ new_tasks, ])
-        return JsonResponse(serialized_obj[1:-1], safe=False)
-    return render(request, 'joinboard/index.html')
+        Task.objects.create(text=request.POST['textvalue'], created_at=request.POST['dateValue'], user=request.user.username, description=request.POST['description'], category=request.POST['category'])
+    return render(request, 'join/index.html')
+
+"""
+this function is for get the completely JSON
+"""
+def allTask(request):
+    if request.method == 'GET':
+        allJson = Task.objects.all()
+        serialized_obj = serializers.serialize('json', [ allJson, ])
+    return HttpResponse(serialized_obj, content_type="application/json")    
+        
 
 def login_view(request):
     """

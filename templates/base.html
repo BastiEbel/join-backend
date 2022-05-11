@@ -22,7 +22,6 @@
                 <!-- Title -->
                 <span class="mdl-layout-title">
                 {% if request.user.is_authenticated %}
-                <img src="{% static 'img/profile.png' %}">
                 Welcome, {{ request.user.first_name }}
 
                 {% else %}
@@ -34,16 +33,7 @@
                 <!-- Navigation. We hide it in small screens. -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     {% if request.user.is_authenticated %}
-                    <a href="/logout" onclick="deleteCSRFToken()">Logout</a>
-                    <!-- Right aligned menu below button -->
-                    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-                      <i class="material-icons">more_vert</i>
-                    </button>
-
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-                        <li class="mdl-menu__item"><a class="menu-link" href="/profil">Profile</a></li>
-                        <li class="mdl-menu__item"><a class="menu-link" href="/logout" onclick="deleteCSRFToken()">Logout</a></li>
-                    </ul> {% else %}
+                    <a href="/logout" onclick="deleteCSRFToken()">Logout</a> {% else %}
                     <a href="/register">Register</a> {% endif %}
                 </nav>
             </div>
