@@ -12,7 +12,7 @@ from joinboard.models import Task
 # Create your views here.
 def index(request):
     if request.method == 'POST':
-        Task.objects.create(text=request.POST['textvalue'], created_at=request.POST['dateValue'], user=request.user.username, description=request.POST['description'], category=request.POST['category'])
+        Task.objects.create(text=request.POST['textvalue'], user=request.user, created_at=request.POST['datevalue'], description=request.POST['description'], category=request.POST['category'])
     return render(request, 'join/index.html')
 
 """
@@ -20,10 +20,15 @@ this function is for get the completely JSON
 """
 def allTask(request):
     if request.method == 'GET':
-        allJson = Task.objects.all()
-        serialized_obj = serializers.serialize('json', [ allJson, ])
-    return HttpResponse(serialized_obj, content_type="application/json")    
-        
+        alljson = Task.objects.all()
+        serialized_obj = serializers.serialize('json', [ alljson, ])
+        return HttpResponse(serialized_obj, content_type="application/json")
+
+def singlejson(request, id):
+    if request.method == 'GET':
+        single_json = Task.objects.get(id=id)
+        serialized_obj = serializers.serialize('json', [ single_json, ])
+        return HttpResponse(serialized_obj[1:-1], content_type="application/json")
 
 def login_view(request):
     """

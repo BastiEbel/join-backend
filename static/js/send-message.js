@@ -1,12 +1,11 @@
-async function sendMessage(event) {
-    event.preventDefault();
+async function sendMessage() {
     let fd = new FormData();
     let token = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
 
     fd.append('csrfmiddlewaretoken', token);
 
-    await fetch('', {
+    await fetch('/tasks/', {
         method: 'POST',
         body: fd
     });
@@ -15,11 +14,5 @@ async function sendMessage(event) {
 }
 
 function taskDate() {
-    let date = new Date();
-
-    let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ('0' + date.getDate()).slice(-2);
-    let year = date.getFullYear().toString();
-
-    dateString(date).format(year - month - days);
+    moment(newdate).format('YYYY-MM-DD HH:mm');
 }

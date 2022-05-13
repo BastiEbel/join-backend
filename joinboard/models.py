@@ -18,6 +18,6 @@ CATEGORY_CHOICES = (
 class Task(models.Model):
     text = models.CharField(max_length=500)
     created_at = models.DateField(default=date.today)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     description = models.CharField(max_length=500)
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default="Todo")

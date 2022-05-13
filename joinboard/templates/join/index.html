@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %} {% if request.user.is_authenticated %}
-<form onsubmit="sendMessage(event)" method="post">
+<form onsubmit="sendMessage(); return false;" method="POST">
     {% csrf_token %}
     <button click="sendMessage(event)">Add tabel Field</button>
 </form>
@@ -9,10 +9,10 @@
 </div>
 
 <div>
-    <form action="" method="post">
+    <form action="" method="POST">
         {% csrf_token %} Text
         <input type="text" name="textvalue"> Datum
-        <input onsubmit="taskDate();" id="date" type="date" name="datevalue"> Beschreibung
+        <input onsubmit="taskDate();" id="newdate" type="date" name="datevalue">Beschreibung
         <input type="text" name="description"> Auswahl
         <select name="category" id="category-field">
             <option value="Todo">Todo</option>
