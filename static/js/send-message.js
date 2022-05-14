@@ -14,5 +14,5 @@ async function sendMessage() {
 }
 
 function taskDate() {
-    moment(newdate).format('YYYY-MM-DD HH:mm');
+    moment(newdate).format('YYYY-MM-DD');
 }

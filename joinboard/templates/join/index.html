@@ -1,25 +1,31 @@
 {% extends "base.html" %} {% block content %} {% if request.user.is_authenticated %}
 <form onsubmit="sendMessage(); return false;" method="POST">
     {% csrf_token %}
-    <button click="sendMessage(event)">Add tabel Field</button>
+    <a class="fullJson" href="tasks/">Show full JSON</a>
 </form>
 
-<div id="messageContainer">
-
-</div>
-
-<div>
+<div class="addJson">
     <form action="" method="POST">
-        {% csrf_token %} Text
-        <input type="text" name="textvalue"> Datum
-        <input onsubmit="taskDate();" id="newdate" type="date" name="datevalue">Beschreibung
-        <input type="text" name="description"> Auswahl
-        <select name="category" id="category-field">
+        {% csrf_token %}
+        <div class="container-style">
+            Text
+            <input type="text" name="textvalue">
+        </div>
+        <div class="container-style">
+            Datum
+            <input onsubmit="taskDate();" id="newdate" type="date" name="datevalue"></div>
+        <div class="container-style">
+            Beschreibung
+            <input type="text" name="description"></div>
+        <div class="container-style">
+            Auswahl
+            <select name="category" id="category-field">
             <option value="Todo">Todo</option>
             <option value="Today">Today</option>
             <option value="In progress">In progress</option>
             <option value="Done">Done</option>
         </select>
+        </div>
         <button>Erstellen</button>
     </form>
 </div>

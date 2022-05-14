@@ -11,72 +11,39 @@
     padding-left: 16px !important;
 }
 
-.menu-link {
-    color: black;
-    text-decoration: none;
-}
-
-img {
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    margin-right: 16px;
-}
-
 .mdl-button {
     width: 32px !important;
     margin-left: 16px !important;
 }
 
-.color-gray {
-    color: rgba(0, 0, 0, 0.26)
-}
-
-.color-black {
-    color: black;
-}
-
-.color-red {
-    color: rgba(255, 0, 0, 0.671);
-}
-
-.chat {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: 16px;
-    margin-left: 16px;
-    width: calc(100% - 32px);
-}
-
-.chat-section {
-    background-color: rgba(204, 204, 204, 0.267);
+.addJson {
+    width: 400px;
+    margin-top: 80px;
+    background-color: rgba(204, 204, 204, 0);
     border: 1px solid black;
+    box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.main-user {
-    display: flex;
-    justify-content: flex-start;
+select {
+    width: 190px;
+    height: 25px;
 }
 
-.otheruser {
+.container-style {
+    width: 80%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .mdl-button {
     margin-left: 20px;
     width: 80px;
-}
-
-.container-chat {
-    height: 600px;
-    width: 500px;
-    border: 1px solid rgba(0, 0, 0, 0.397);
-    box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.5);
-    overflow: auto;
 }
 
 .login-container {
@@ -90,13 +57,6 @@ img {
     border-top-left-radius: 8px;
 }
 
-.container {
-    width: 400px;
-    height: 450px;
-    box-shadow: 5px 5px 7px 1px rgba(0, 0, 0, 0.36);
-    border-radius: 8px;
-}
-
 input {
     height: 25px;
     width: 180px;
@@ -104,7 +64,8 @@ input {
 }
 
 button {
-    margin-top: 10px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     width: 100px;
     height: 30px;
 }
@@ -132,6 +93,10 @@ a {
 
 a:hover {
     color: rgb(255, 130, 172);
+}
+
+.fullJson {
+    color: black;
 }
 
 .container-register {

@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('tasks/', allTask),
-    path('task/<int:id>', singlejson),
+    path('tasks/<int:id>', singlejson),
     path('logout/', logout_view),
     path('login/', login_view),
     path('register/', register_view),

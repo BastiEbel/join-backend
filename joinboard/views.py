@@ -21,8 +21,8 @@ this function is for get the completely JSON
 def allTask(request):
     if request.method == 'GET':
         alljson = Task.objects.all()
-        serialized_obj = serializers.serialize('json', [ alljson, ])
-        return HttpResponse(serialized_obj, content_type="application/json")
+        serialized_obj = serializers.serialize('json',  alljson, )
+        return HttpResponse(serialized_obj[1:-1], content_type="application/json")
 
 def singlejson(request, id):
     if request.method == 'GET':
