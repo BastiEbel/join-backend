@@ -58,9 +58,11 @@ def register_view(request):
     """
     redirect = request.POST.get('next', '/')
     if request.method == 'POST':
+        if User.objects.filter(username = request.POST.get('username')).first():
+            return render(request, 'auth/register.html', {'wrongUsername': True})
         if request.POST.get('password') == request.POST.get('confirm_password'):
-            user = User.objects.create_user(username=request.POST('username'), first_name=request.POST('first_name'), last_name=request.POST('last_name'), 
-            email=request.POST('email'), password=request.POST('password'))
+            user = User.objects.create_user(username=request.POST.get('username'), first_name=request.POST.get('first_name'), last_name=request.POST.get('last_name'), 
+            email=request.POST.get('email'), password=request.POST.get('password'))
             user.save()
             return HttpResponseRedirect(redirect)
         else:
