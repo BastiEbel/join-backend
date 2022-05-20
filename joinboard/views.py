@@ -23,6 +23,9 @@ def allTask(request):
     """
     this function returns the completely JSON
     """
+    if request.method == 'POST':
+        Task.objects.create(text=request.POST['textvalue'], user=request.user, created_at=request.POST['datevalue'], description=request.POST['description'], category=request.POST['category'])
+        return HttpResponse('Task is create')
     if request.method == 'GET':
         alljson = Task.objects.all()
         serialized_obj = serializers.serialize('json',  alljson, )

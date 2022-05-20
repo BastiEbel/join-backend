@@ -86,13 +86,19 @@ form {
     flex-direction: column;
 }
 
-a {
-    font-size: larger;
-    color: white;
+.link-register {
+    font-size: larger !important;
+    color: white !important;
+    text-decoration: none !important;
 }
 
-a:hover {
-    color: rgb(255, 130, 172);
+.link-register:hover {
+    color: rgb(255, 130, 172) !important;
+}
+
+.message {
+    color: red !important;
+    font-size: large !important;
 }
 
 .fullJson {
