@@ -47,9 +47,11 @@ select {
 }
 
 .login-container {
-    width: 280px;
+    height: 50px;
+    width: 350px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .header-login {
@@ -64,10 +66,27 @@ input {
 }
 
 button {
-    margin-top: 16px;
-    margin-bottom: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
     width: 100px;
     height: 30px;
+}
+
+.btn-add {
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+a {
+    margin-right: 16px;
+    font-size: medium;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.705);
+}
+
+a:hover {
+    color: rgb(255, 130, 172);
+    text-decoration: underline;
 }
 
 .login-field {
